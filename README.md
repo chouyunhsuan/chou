@@ -6,11 +6,15 @@
 
 ## week1
 課堂上
-*申請Github帳號
-*安裝R、Rstudio
-*建立readme
+
+* 申請Github帳號
+
+* 安裝R、Rstudio
+
+* 建立readme
 
 課後
+
 *datacamp學習
 
 [hw1](https://chouyunhsuan.github.io/chou/week1/001.html)
