@@ -15,6 +15,6 @@
 
 課後
 
-*datacamp學習
+* datacamp學習
 
 [hw1](https://chouyunhsuan.github.io/chou/week1/001.html)
