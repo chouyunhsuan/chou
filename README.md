@@ -1,7 +1,8 @@
-<<<<<<< HEAD
 ﻿大家好，我是周芸瑄
+ 
 學號:B323107009
-學系:北醫藥學系
-=======
 
->>>>>>> 14d1c6d4867f23c395ae22d983bd13e167294604
+學系:北醫藥學系
+
+week1
+[hw1](https://chouyunhsuan.github.io/chou/week1/001.Rmd)
