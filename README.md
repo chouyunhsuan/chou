@@ -5,4 +5,4 @@
 學系:北醫藥學系
 
 week1
-[hw1](https://chouyunhsuan.github.io/chou/week1/001.Rmd)
+[hw1](https://chouyunhsuan.github.io/chou/week1/001.html)
