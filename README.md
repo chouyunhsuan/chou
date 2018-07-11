@@ -35,5 +35,5 @@
 
 [week2_task1](https://chouyunhsuan.github.io/chou/week2/123.html)
 
-[week2_task2]
+[week2_task2](https://chouyunhsuan.github.io/chou/week2/wordcloud.html)
 
