@@ -3,16 +3,15 @@ title: '資料視覺化'
 output: html_document
 ---
 ```{r}
-library(ggplot2)
-
 #單變數:類別型
+library(ggplot2)
 ggplot(data = quakes, aes(x = stations)) +
   geom_bar(fill = "lightblue", colour = "black")
 
 ```
 ```{r}
-library(ggplot2)
 #單變數:連續型
+library(ggplot2)
 ggplot(data = quakes, aes(x = mag)) +
 geom_histogram()
 
@@ -24,8 +23,8 @@ geom_histogram()
 
 
 ```{r}
-library(ggplot2)
 #雙變數
+library(ggplot2)
 ggplot(data = quakes, aes(x = long, y=depth)) +
   geom_point()
 
