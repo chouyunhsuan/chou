@@ -19,3 +19,20 @@
 * datacamp學習
 
 [hw1](https://chouyunhsuan.github.io/chou/week1/001.html)
+
+## week2
+課堂上
+
+* 學習資料視覺化
+
+* 學習文字雲製作
+
+課後
+
+* 熟悉上課所學內容
+
+* 完成本周作業
+
+[week2_task1](https://chouyunhsuan.github.io/chou/week2/123.html)
+
+[week2_task2](https://chouyunhsuan.github.io/chou/week2/wordcloud.html)
