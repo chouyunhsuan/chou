@@ -1,0 +1,91 @@
+---
+title: "Report of Happinest and Open Data"
+author: "ruby"
+date: "2018年7月18日"
+output: html_document
+---
+# data from https://www.kaggle.com/mrisdal/happiness-and-open-data/data
+```{r}
+library(dplyr)
+# Read in data files from `open-data` and `world-happiness` datasets
+open_data <- read.csv("./data/eda/countries.csv", stringsAsFactors=F)
+happiness <- read.csv("./data/eda/2015.csv", stringsAsFactors=F)
+# Rename from "Country Name" to just "Country" so it's easier to join
+colnames(open_data)[2] <- "Country"
+# Join the two dataset files on "Country"
+open_data_happiness <- open_data %>%
+  left_join(happiness, by = "Country") %>%
+  mutate(Country = factor(Country)) %>%
+  # Keep only columns I plan to use
+  select(Country, Region, X2015.Score, Happiness.Score, Economy..GDP.per.Capita., 
+         Family, Health..Life.Expectancy., Freedom, Trust..Government.Corruption., 
+         Generosity, Dystopia.Residual)
+# Give the columns nicer names now that our data is in one dataframe
+colnames(open_data_happiness) <- c("Country", "Region", "Openness", "Happiness", "GDP", "Family", "Health", "Freedom", "Trust", "Generosity", "DystopiaResidual")
+
+```
+#閱讀資料
+```{r}
+library(formattable)
+open_data_happiness %>%
+  # Which countries are the most open?
+  arrange(desc(Openness)) %>%
+  # Round our numeric variables to two decimal places
+  mutate_each(funs(round(., 2)), -c(Country, Region, Openness)) %>%
+  head(10) %>%
+  formattable(list(
+    Openness = color_bar("yellow"),
+    Happiness = color_bar("lightgreen"),
+    GDP = color_bar("deepskyblue"),
+    Family = color_bar("deepskyblue"),
+    Health = color_bar("deepskyblue"),
+    Freedom = color_bar("deepskyblue"),
+    Trust = color_bar("deepskyblue"),
+    Generosity = color_bar("deepskyblue"),
+    DystopiaResidual = color_bar("deepskyblue")
+  ), align = "l")
+```
+
+
+
+#開放國家=快樂國家?
+```{r}
+library(ggplot2)
+library(viridis)
+
+
+
+ggplot(open_data_happiness, 
+  aes(x = Openness, 
+      y = Happiness)) +
+  geom_point(aes(colour = Region),
+             size = 2) +
+  geom_smooth(method="lm") +
+  labs(x = "Openness Score",
+       y = "Happiness Score",
+       title = "Are open data friendly countries happy countries?",
+       subtitle = "Data openness and happiness by country in 2015") +
+  scale_color_viridis(discrete = T) +
+  theme_minimal() +
+  theme(text = element_text(size=16))
+```
+
+# RESULT:是的，圖型大致上呈現右上左下的分布，證明越開放的國家越快樂
+
+# 變量之間的相關性
+```{r}
+library(corrplot)
+## corrplot 0.84 loaded
+
+# Subset the data to include only the variables we want to look at
+
+open_data_corr <- open_data_happiness %>%
+  select(Openness, Happiness, GDP, Family, Health, 
+         Freedom, Trust, Generosity, DystopiaResidual) %>%
+  mutate(Openness = as.numeric(Openness))
+
+od_corr <- cor(open_data_corr, use = "complete", method = "pearson")
+
+corrplot(od_corr)
+
+```
