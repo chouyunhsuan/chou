@@ -53,3 +53,19 @@
 [week3_eda](https://chouyunhsuan.github.io/chou/week3/EDA.html)
 
 [week3_text mining](https://chouyunhsuan.github.io/chou/week3/TFIDF_PCA_K-means.html)
+
+## week4
+課堂上
+
+* t.test
+
+* anova
+
+* advanced eda
+
+課後
+* 複習 搞懂上課內容
+
+* 完成本周作業
+
+[week4_hw](https://chouyunhsuan.github.io/chou/week4/regression.html)
