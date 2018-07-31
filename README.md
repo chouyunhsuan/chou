@@ -37,3 +37,19 @@
 
 [week2_task2](https://chouyunhsuan.github.io/chou/week2/wordcloud.html)
 
+## week3
+課堂上
+
+* EDA 
+
+* text mining 文字探勘
+
+課後
+
+* datacamp
+
+* 完成本周作業
+
+[week3_eda](https://chouyunhsuan.github.io/chou/week3/EDA.html)
+
+[week3_text mining](https://chouyunhsuan.github.io/chou/week3/TFIDF_PCA_K-means.html)
