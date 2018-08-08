@@ -1,0 +1,12 @@
+library(shiny)
+shinyUI(fluidPage(
+  titlePanel("final project"),
+  sidebarLayout(
+    sidebarPanel(
+      radioButtons("radio", label = "Choices", choices = c(
+        "VTI","VGK","VPL","VWO","IEI","BWX","EWT","GXC" )),
+      
+    ),
+    mainPanel(plotOutput("distPlot")))
+  )
+)

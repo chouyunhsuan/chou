@@ -1,0 +1,11 @@
+library(ggplot2)
+VTI_bal <- read.csv(file = "data/VTI_bal.csv", header = TRUE)
+shinyServer(function(input, output) {
+  output$distPlot <- renderPlot({
+    if(input$radio = "VTI"){
+      ggplot(data = VTI_bal, aes(x = `Year`, y = `Portfolio 1 Balance`)) +
+        geom_bar(fill = "lightblue", colour = "black")
+    }
+    
+  })
+})data()

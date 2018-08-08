@@ -1,0 +1,69 @@
+library(shiny)
+library(ggplot2)
+VTI_bal <- read.csv("data/VTI_bal.csv")
+VGK_bal <- read.csv("data/VGK_bal.csv")
+VPL_bal <- read.csv("data/VPL_bal.csv")
+VWO_bal <- read.csv("data/VWO_bal.csv")
+IEI_bal <- read.csv("data/IEI_bal.csv")
+BWX_bal <- read.csv("data/BWX_bal.csv")
+EWT_bal <- read.csv("data/EWT_bal.csv")
+GXC_bal <- read.csv("data/GXC_bal.csv")
+server <- function(input, output,session) {
+  output$distPlot <- renderPlot({
+    
+    print(input$name.input)
+    # ggplot(data = VTI_bal, aes(x = Year)) +
+    #   geom_histogram() +
+    #   labs(y = "Portfolio 1 Balance", x = "Year")
+    
+    plotData = VTI_bal
+    
+    print(input$name.input)
+    plotData
+    
+    if( input$name.input == "VTI" )
+    {
+      plotData = VTI_bal  
+    }
+    else if( input$name.input == "VGK" )
+    {
+      plotData = VGK_bal
+    }
+    
+    
+    ggplot(data = plotData, aes(x = Year)) +
+         geom_histogram() +
+         labs(y = paste0("Portfolio 1 Balance ", input$name), x = "Year")
+    
+    # if( is.element(input$name.input, "VPL") ){
+    #   ggplot(data = VPL_bal, aes(x = Year)) +
+    #     geom_histogram() +
+    #     labs(y = "Portfolio 1 Balance", x = "Year")
+    # }
+    # if( is.element(input$name.input, "VWO") ){
+    #   ggplot(data = VWO_bal, aes(x = Year)) +
+    #     geom_histogram() +
+    #     labs(y = "Portfolio 1 Balance", x = "Year")
+    # }
+    # if( is.element(input$name.input, "IEI") ){
+    #   ggplot(data = IEI_bal, aes(x = Year)) +
+    #     geom_histogram() +
+    #     labs(y = "Portfolio 1 Balance", x = "Year")
+    # }
+    # if( is.element(input$name.input, "BWX") ){
+    #   ggplot(data = BWX_bal, aes(x = Year)) +
+    #     geom_histogram() +
+    #     labs(y = "Portfolio 1 Balance", x = "Year")
+    # }
+    # if( is.element(input$name.input, "EWT") ){
+    #   ggplot(data = EWT_bal, aes(x = Year)) +
+    #     geom_histogram() +
+    #     labs(y = "Portfolio 1 Balance", x = "Year")
+    # }
+    # if( is.element(input$name.input, "GXC") ){
+    #   ggplot(data = GXC_bal, aes(x = Year)) +
+    #     geom_histogram() +
+    #     labs(y = "Portfolio 1 Balance", x = "Year")
+    # }
+  })
+}

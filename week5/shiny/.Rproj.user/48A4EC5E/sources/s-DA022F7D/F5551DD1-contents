@@ -1,0 +1,22 @@
+library(shiny)
+library(ggplot2)
+data <- read.csv(file = "data/data.csv",
+                 header = TRUE)
+function(input, output) {
+  
+  output$table <- DT::renderDataTable(DT::datatable({
+    data <- data
+    if (input$Name != "All") {
+      data <- data[data$Name == input$Name,]
+    }
+    if (input$Year != "All") {
+      data <- data[data$Year == input$Year,]
+    }
+    if (input$Month != "All") {
+      data <- data[data$Month == input$Month,]
+    }
+    data
+  }))
+  
+}
+

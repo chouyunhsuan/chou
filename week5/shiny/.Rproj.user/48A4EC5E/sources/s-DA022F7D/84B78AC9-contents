@@ -1,0 +1,11 @@
+library(shiny)
+ui <- shinyUI(
+  fluidPage(
+  titlePanel("final project"),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput('name.input', 'name', c("VTI","VGK","VPL","VWO","IEI","BWX","EWT","GXC" ), 
+                  selectize = TRUE)),
+    mainPanel(plotOutput("distPlot")))
+  )
+)

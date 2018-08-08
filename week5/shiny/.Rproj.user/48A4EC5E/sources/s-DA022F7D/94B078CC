@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1533649847868.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "94B078CC",
+    "lastKnownWriteTime" : 32651513914720368,
+    "last_content_update" : 1533649847868,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "F4C2E570",
+        "caption" : "VTI_bal",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=VTI_bal&cache_key=F4C2E570",
+        "displayedObservations" : 22,
+        "environment" : "",
+        "object" : "VTI_bal",
+        "preview" : 0,
+        "totalObservations" : 22,
+        "variables" : 2
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
