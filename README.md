@@ -82,4 +82,5 @@
 
 ## week6
 [final project](https://chouyunhsuan.shinyapps.io/shiny/)
+
 [參考資料](https://www.portfoliovisualizer.com/backtest-portfolio?s=y&timePeriod=4&startYear=2000&firstMonth=1&endYear=2018&lastMonth=12&endDate=08%2F02%2F2018&initialAmount=10000&annualOperation=0&annualAdjustment=0&inflationAdjusted=true&annualPercentage=0.0&frequency=4&rebalanceType=1&showYield=false&reinvestDividends=true&symbol1=VTI&allocation1_1=70&symbol2=BIV&allocation2_1=30
