@@ -1,39 +1,31 @@
 library(shiny)
 library(ggplot2)
-VTI_bal <- read.csv("data/VTI_bal.csv")
-VGK_bal <- read.csv("data/VGK_bal.csv")
-VPL_bal <- read.csv("data/VPL_bal.csv")
-VWO_bal <- read.csv("data/VWO_bal.csv")
-IEI_bal <- read.csv("data/IEI_bal.csv")
-BWX_bal <- read.csv("data/BWX_bal.csv")
-EWT_bal <- read.csv("data/EWT_bal.csv")
-GXC_bal <- read.csv("data/GXC_bal.csv")
+
+# VPL_bal <- read.csv("data/VPL_bal.csv")
+# VWO_bal <- read.csv("data/VWO_bal.csv")
+# IEI_bal <- read.csv("data/IEI_bal.csv")
+# BWX_bal <- read.csv("data/BWX_bal.csv")
+# EWT_bal <- read.csv("data/EWT_bal.csv")
+# GXC_bal <- read.csv("data/GXC_bal.csv")
 server <- function(input, output,session) {
+  
+  output$plotValue <- renderTable({
+    filename = paste0("data/",input$name.input,"_bal.csv")
+    plotData <- read.csv(filename)
+  })
+    
+  output$plotName <- renderText({
+    input$name.input
+  })
+  
   output$distPlot <- renderPlot({
-    
+    filename = paste0("data/",input$name.input,"_bal.csv")
+    print(filename)
     print(input$name.input)
-    # ggplot(data = VTI_bal, aes(x = Year)) +
-    #   geom_histogram() +
-    #   labs(y = "Portfolio 1 Balance", x = "Year")
-    
-    plotData = VTI_bal
-    
-    print(input$name.input)
-    plotData
-    
-    if( input$name.input == "VTI" )
-    {
-      plotData = VTI_bal  
-    }
-    else if( input$name.input == "VGK" )
-    {
-      plotData = VGK_bal
-    }
-    
-    
-    ggplot(data = plotData, aes(x = Year)) +
-         geom_histogram() +
-         labs(y = paste0("Portfolio 1 Balance ", input$name), x = "Year")
+    plotData <- read.csv(filename)
+    ggplot(data = plotData, aes(x = Year, y = Portfolio.1.Balance)) +
+      geom_bar(stat="identity") + 
+      labs(y = paste0("Portfolio 1 Balance ", input$name.input), x = "Year")
     
     # if( is.element(input$name.input, "VPL") ){
     #   ggplot(data = VPL_bal, aes(x = Year)) +

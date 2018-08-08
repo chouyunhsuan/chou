@@ -69,3 +69,16 @@
 * 完成本周作業
 
 [week4_hw](https://chouyunhsuan.github.io/chou/week4/regression.html)
+
+## week5
+課堂上
+
+* 聽講座
+
+* shiny
+
+課後
+* 完成期末報告
+
+## week6
+[final project](https://chouyunhsuan.shinyapps.io/shiny/)
